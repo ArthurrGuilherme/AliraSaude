@@ -84,34 +84,64 @@
                 <div class="gallery-wrapper">
                   <div class="gallery">
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel01.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel02.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel03.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel04.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel05.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel06.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel07.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel08.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel09.webp" alt="" srcset="">
                     </div>
                     <div class="item">
-                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                        <img class="w-100" src="./img/carrossel010.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel11.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel12.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel13.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel14.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel15.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel16.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel17.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel18.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel19.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img class="w-100" src="./img/carrossel20.webp" alt="" srcset="">
                     </div>
                   </div>
                 </div>
@@ -129,42 +159,43 @@ let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
 
-function moveToNextItem() {
-  currentItem += 1;
+let offset = 0; // Início do deslocamento
 
-  if (currentItem >= maxItems) {
-    currentItem = 0;
-  }
+// Função para mover os itens de forma contínua
+function moveCarrossel() {
+  offset -= 5.5; // Mover constantemente para a esquerda
 
-  if (currentItem < 0) {
-    currentItem = maxItems - 1;
+  // Quando atingir o final do carrossel, começa do início
+  if (Math.abs(offset) >= maxItems * 160) {
+    offset = 0; // Reseta o deslocamento
   }
 
   // Mover visualmente os itens com translateX
-  const offset = -(currentItem * 160); // Desloca de acordo com o item
   document.querySelector('.gallery').style.transform = `translateX(${offset}px)`;
 
-  items.forEach((item) => item.classList.remove("current-item"));
-  items[currentItem].classList.add("current-item");
+  // Continuar a animação de forma contínua
+  requestAnimationFrame(moveCarrossel);
 }
 
-// Mover automaticamente a cada 1.5 segundos (1500ms)
-setInterval(moveToNextItem, 1500);
+// Iniciar o movimento contínuo
+moveCarrossel();
 
-// Se quiser usar os controles manuais também:
+// Controle manual dos itens
 controls.forEach((control) => {
   control.addEventListener("click", (e) => {
     const isLeft = e.target.classList.contains("arrow-left");
 
     if (isLeft) {
-      currentItem -= 1;
+      offset += 250; // Move para a direita (passo de 250px)
     } else {
-      currentItem += 1;
+      offset -= 250; // Move para a esquerda (passo de 250px)
     }
 
-    moveToNextItem(); // Chama a função de rotação ao clicar
+    // Ajustar a posição da galeria após o clique
+    document.querySelector('.gallery').style.transform = `translateX(${offset}px)`;
   });
 });
+
 
 
     </script>

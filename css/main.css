@@ -9,10 +9,10 @@
     display: flex;
     flex-flow: row nowrap;
     gap: 15px;
-    transition: transform 1s ease-in-out;
+    transition: none;
 }
 .item {
-    width: 240px;
+    width: 200px;
     height: 200px;
     flex-shrink: 0;
     display: flex;
