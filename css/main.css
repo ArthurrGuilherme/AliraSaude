@@ -1,5 +1,30 @@
 .Textoh1 h1 {
     font-size: 3.5rem;
     font-weight: 700 !important;
+} 
+.gallery-wrapper {
+    overflow-x: hidden;
+} 
+.gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+    transition: transform 1s ease-in-out;
 }
+.item {
+    width: 240px;
+    height: 200px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+  
+  .current-item {
+    opacity: 1;
+  }
+  
+
   

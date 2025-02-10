@@ -79,11 +79,95 @@
                     </section>
                 <!--Desktop-->
             <!--Introdução-->
+            <!--Carrossel-->
+            <div class="container-md">
+                <div class="gallery-wrapper">
+                  <div class="gallery">
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                    <div class="item">
+                        <img src="./img/carrossel01.webp" alt="" srcset="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <!--Carrossel-->
         </main>
     <!--Conteúdo Principal-->
 </body>
 <!--Js-->
     <script src="./js/scrollrevel.js"></script>
+    <script>
+const controls = document.querySelectorAll(".control");
+let currentItem = 0;
+const items = document.querySelectorAll(".item");
+const maxItems = items.length;
+
+function moveToNextItem() {
+  currentItem += 1;
+
+  if (currentItem >= maxItems) {
+    currentItem = 0;
+  }
+
+  if (currentItem < 0) {
+    currentItem = maxItems - 1;
+  }
+
+  // Mover visualmente os itens com translateX
+  const offset = -(currentItem * 160); // Desloca de acordo com o item
+  document.querySelector('.gallery').style.transform = `translateX(${offset}px)`;
+
+  items.forEach((item) => item.classList.remove("current-item"));
+  items[currentItem].classList.add("current-item");
+}
+
+// Mover automaticamente a cada 1.5 segundos (1500ms)
+setInterval(moveToNextItem, 1500);
+
+// Se quiser usar os controles manuais também:
+controls.forEach((control) => {
+  control.addEventListener("click", (e) => {
+    const isLeft = e.target.classList.contains("arrow-left");
+
+    if (isLeft) {
+      currentItem -= 1;
+    } else {
+      currentItem += 1;
+    }
+
+    moveToNextItem(); // Chama a função de rotação ao clicar
+  });
+});
+
+
+    </script>
     <!--Js scrip-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!--Js scrip-->
