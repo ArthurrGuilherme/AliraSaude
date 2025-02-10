@@ -158,43 +158,29 @@ const controls = document.querySelectorAll(".control");
 let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
+let offset = 0;
+const gallery = document.querySelector('.gallery');
 
-let offset = 0; // Início do deslocamento
-
-// Função para mover os itens de forma contínua
 function moveCarrossel() {
-  offset -= 5.5; // Mover constantemente para a esquerda
+  offset -= 4.5; // A velocidade do movimento
 
-  // Quando atingir o final do carrossel, começa do início
-  if (Math.abs(offset) >= maxItems * 160) {
-    offset = 0; // Reseta o deslocamento
+  // Verifique se chegou ao final e reinicie o movimento
+  if (Math.abs(offset) >= maxItems * 173) {
+    offset = 0;
+    // Mova o primeiro item para o final para criar o efeito de rotação contínua
+    gallery.appendChild(gallery.firstElementChild);
   }
 
-  // Mover visualmente os itens com translateX
-  document.querySelector('.gallery').style.transform = `translateX(${offset}px)`;
+  gallery.style.transition = 'transform 0.5s ease'; // Adiciona uma transição suave
+  gallery.style.transform = `translateX(${offset}px)`; // Aplica o deslocamento
 
-  // Continuar a animação de forma contínua
+  // Continua o movimento contínuo
   requestAnimationFrame(moveCarrossel);
 }
 
-// Iniciar o movimento contínuo
+// Inicia a animação contínua
 moveCarrossel();
 
-// Controle manual dos itens
-controls.forEach((control) => {
-  control.addEventListener("click", (e) => {
-    const isLeft = e.target.classList.contains("arrow-left");
-
-    if (isLeft) {
-      offset += 250; // Move para a direita (passo de 250px)
-    } else {
-      offset -= 250; // Move para a esquerda (passo de 250px)
-    }
-
-    // Ajustar a posição da galeria após o clique
-    document.querySelector('.gallery').style.transform = `translateX(${offset}px)`;
-  });
-});
 
 
 
