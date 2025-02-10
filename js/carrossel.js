@@ -14,7 +14,7 @@ function duplicateItems() {
 
 // Função para mover o carrossel para a direita
 function moveCarrossel() {
-  offset -= 10; // A velocidade do movimento (ajustar conforme necessário)
+  offset -= 4; // A velocidade do movimento (ajustar conforme necessário)
 
   // Se todos os itens da primeira parte saírem de cena, reposiciona a galeria para o início
   if (Math.abs(offset) >= itemWidth * items.length) {
