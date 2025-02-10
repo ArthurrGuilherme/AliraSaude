@@ -8,8 +8,25 @@
     font-weight: weight;
     font-style: normal;
 }
-
 /*Vareaveis*/
+#DisplayMobile {
+    display: none;
+}
+@media only screen and (max-width: 991px) {
+    #DisplayMobile {
+      display: block;
+    }
+    #DisplayDesktop {
+      display: none;
+    }
+    #MenuMobile {
+        justify-content: center;
+    }
+    #MenuMobile02 {
+        padding-top: .5rem;
+        align-items: center;
+    }
+  }
 :root {
     --bs-primaria: #492073;
 }
