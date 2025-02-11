@@ -22,3 +22,7 @@
     opacity: 0.7;
     transition: opacity 0.3s ease;
   }
+#CardRoxo:hover {
+  background: var(--bs-primaria);
+  color: var(--bs-white);
+}
