@@ -29,3 +29,6 @@
 #CardAmarelo:hover {
   background: var(--bs-secundario);
 }
+.Beendiciostext strong p {
+  font-size: 0.87rem;
+}
