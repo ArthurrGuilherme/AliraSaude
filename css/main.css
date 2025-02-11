@@ -26,3 +26,6 @@
   background: var(--bs-primaria);
   color: var(--bs-white);
 }
+#CardAmarelo:hover {
+  background: var(--bs-secundario);
+}
