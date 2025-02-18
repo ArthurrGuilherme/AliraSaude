@@ -32,3 +32,7 @@
 .Beendiciostext strong p {
   font-size: 0.87rem;
 }
+summary {
+  background: aliceblue;
+  padding: 1rem 0px;
+}
