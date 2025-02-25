@@ -37,7 +37,7 @@ summary {
   padding: 1rem 0px;
 }
 input, select, textarea {
-  border: 1px solid #000;
+  border: 1.9px solid #00000072;
   padding: .2rem 1.5rem;
   border-radius: 15px;
 }
