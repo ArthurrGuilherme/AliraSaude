@@ -30,3 +30,8 @@ ScrollReveal().reveal('#Card03',
         duration: 1400, reset: true, distance: '100px' , origin: 'left',
     }
 );
+ScrollReveal().reveal('#Card04', 
+    {    
+        duration: 1600, reset: true, distance: '100px' , origin: 'left',
+    }
+);
