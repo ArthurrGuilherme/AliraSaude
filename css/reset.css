@@ -33,6 +33,17 @@ p, h1{
         padding-top: .5rem;
         align-items: center;
     }
+    #footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+    #footer02 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 :root {
     --bs-primaria: #492073;
