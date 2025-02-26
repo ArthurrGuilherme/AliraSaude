@@ -29,16 +29,16 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul id="MenuMobile02" class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link text-white active" aria-current="page" href="./index.html">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Planos</a>
+                        <button id="Planos" class="nav-link text-white">Planos</button>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Seja um Parceiro</a>
+                        <a class="nav-link text-white" href="https://api.whatsapp.com/send/?phone=5519981518800&text&type=phone_number&app_absent=0" target="_blank">Seja um Parceiro</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contato</a>
+                        <button class="nav-link text-white" id="Formulario">Contato</button>
                       </li>
                       <li id="DisplayMobile" class="nav-item">
                         <a href="https://calendly.com/alirasaude/30min?month=2025-02" target="_blank" class="nav-link text-white" >Agendar demonstração</a>
@@ -252,7 +252,7 @@
                                     </div> 
                                     <br>
                                     <div>
-                                        <button id="Planos" style="padding: .5rem 1.5rem; font-weight: 500;border: 1px solid #000; " class="btn btn-light rounded-pill btnhover">Ver Planos</button>
+                                        <button id="btnplano" style="padding: .5rem 1.5rem; font-weight: 500;border: 1px solid #000; " class="btn btn-light rounded-pill btnhover">Ver Planos</button>
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +392,7 @@
             <!--Produtos-->
             <!--Planos-->
                 <section class="Planos" id="DisplayDesktop">
-                    <article class="container-md p-5">
+                    <article id="planobtn" class="container-md p-5">
                         <div>
                             <div class="d-flex justify-content-center align-items-center text-center">
                                 <span>
@@ -655,7 +655,7 @@
             <!--Formulario-->
                 <!--Desktop-->
                     <section id="DisplayDesktop" class="container-xl">
-                        <article>
+                        <article id="containerformulario">
                             <div id="ContainerPrimario" style="gap: 5rem;" class="d-flex justify-content-around">
                                 <div class="TextoPrincipal">
                                     <span>
