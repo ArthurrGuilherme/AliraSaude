@@ -20,6 +20,9 @@ p, h1{
   color: var(--bs-white) !important;
 }
 @media only screen and (max-width: 991px) {
+  #Carrosseltexto {
+    text-align: center;
+  }  
     #DisplayMobile {
       display: block;
     }

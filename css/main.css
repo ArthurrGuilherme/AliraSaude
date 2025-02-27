@@ -5,7 +5,6 @@
 .gallery-wrapper {
     overflow-x: hidden;
   }
-
   .gallery {
     display: flex;
     flex-flow: row nowrap;
